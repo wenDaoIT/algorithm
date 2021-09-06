@@ -9,7 +9,9 @@ public class Solution24 {
             return head;
         }
         ListNode newhead = reverseList(head.next);
+        newhead.next = head.next;
         head.next=null;
+        //System.out.println(newhead.next.val);
         return newhead;
     }
 
