@@ -8,6 +8,8 @@ public class Solution58 {
         Fangfa1 f1 = new Fangfa1();
         System.out.println(f1.reverseLeftWords(s, k));
     }
+
+
 }
 //利用切片函数
 class fangfa2{
