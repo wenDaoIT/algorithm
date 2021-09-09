@@ -20,7 +20,7 @@ public class NK140 {
 //        for (int res : n1.mergeSort(arr,0, arr.length-1,temp)){
 //            System.out.println(res);
 //        }
-        for (int res : n1.SelectSortDG(arr, 0)) {
+        for (int res : n1.ShellSort(arr)) {
             System.out.println(res);
 
         }
@@ -29,8 +29,6 @@ public class NK140 {
     //调用库函数Arrays.sort
     public int[] MySort(int[] arr) {
         Arrays.sort(arr);
-
-
         return arr;
     }
 
@@ -171,6 +169,63 @@ public class NK140 {
             swap(array, index, min);
         }
         SelectSortDG(array, ++index);
+        return array;
+    }
+
+
+//    private int[] InsertSort(int array[]){
+//        if (array == null){
+//            return null;
+//        }
+//        for (int i = 1; i <array.length; i++) {
+//            int j=i;
+//            int temp = array[i];
+//            for (; j >0; j--) {
+//                if (array[j-1] > temp){
+//                    array[j] = array[j-1];
+//                }else {
+//                    break;//此处很有必要，及时停止j--
+//                }
+//
+//            }
+//            //此时j是找到的插入位置，把较小的temp放到前面
+//            array[j]=temp;
+//        }
+//        return array;
+//    }
+    //改成while
+    private int[] InsertSort(int array[]){
+        if (array == null){
+            return null;
+        }
+        for (int i = 1; i <array.length; i++) {
+            int j=i;
+            int temp = array[i];
+            while (j>0 && array[j-1]>temp){
+                array[j] = array[j-1];
+                j--;
+            }
+            //此时j是找到的插入位置，把较小的temp放到前面
+            if (i!= j ){
+                array[j]=temp;
+            }
+        }
+        return array;
+    }
+    private int[] ShellSort(int array[]){
+        int step = array.length >> 1 ;
+        while (step>=1){
+            for (int i = step; i < array.length; i++) {
+                for (int j = i; j >=step; j-=step) {
+                    if (array[j]<array[j-step]){
+                        swap(array,j,j-step);
+                    }else {
+                        break;
+                    }
+                }
+            }
+            step >>= 1;
+        }
         return array;
     }
 
