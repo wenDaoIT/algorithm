@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class NK140 {
 
     public static void main(String[] args) {
-        int[] arr = {5, 2, 3, 1, 6, 4};
+        int[] arr = {5, 2, 3, 1, 6};
         NK140 n1 = new NK140();
 //        for (int res : n1.MySort(arr)){
 //            System.out.println(res);
@@ -20,10 +20,11 @@ public class NK140 {
 //        for (int res : n1.mergeSort(arr,0, arr.length-1,temp)){
 //            System.out.println(res);
 //        }
-        for (int res : n1.ShellSort(arr)) {
+        for (int res : n1.heapSort(arr)) {
             System.out.println(res);
 
         }
+//        System.out.println(arr.length -2 >>1);
     }
 
     //调用库函数Arrays.sort
@@ -213,6 +214,7 @@ public class NK140 {
         return array;
     }
     private int[] ShellSort(int array[]){
+        //希尔排序是对选择排序的一种改进，当插入的值是最小的，后移次数太多
         int step = array.length >> 1 ;
         while (step>=1){
             for (int i = step; i < array.length; i++) {
@@ -228,5 +230,50 @@ public class NK140 {
         }
         return array;
     }
+    /*
+    堆排序
+    思路：
+     */
+    private int[] heapSort(int array[]){
+
+        /*
+        i =(array.length - 2>>1)表示左侧第一个非叶子节点
+        第一次排列
+         */
+        for (int j =(array.length-2>>1); j >=0; j--) {
+            maxHeapfy(array,j,array.length);
+        }
+        for (int i = 0; i <array.length; i++) {
+            //每次排列完之后将头结点和最后节点互换
+            swap(array,0, array.length-i-1);
+            maxHeapfy(array,0,array.length-i-1);
+
+        }
+        return array;
+    }
+    /*
+    比较叶子节点,将对最大的赋值给父节点
+    i表示第几个节点
+    左小右大
+     */
+    private void maxHeapfy(int[] array,int i ,int heapSize){
+        int left = i * 2 + 1;
+        int right = i * 2 + 2;
+        int largest = i;
+        /*
+        如果left > heapSize证明已经到底了
+         */
+        if (left<heapSize && array[left]>array[largest]){
+            largest = left;
+        }
+        if (right<heapSize && array[right]>array[largest]){
+            largest = right;
+        }
+        if (largest != i){
+            swap(array,largest,i);
+            maxHeapfy(array,largest,heapSize);
+        }
+    }
+
 
 }
