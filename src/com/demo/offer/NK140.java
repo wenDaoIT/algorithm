@@ -47,7 +47,7 @@ public class NK140 {
         }
         return arr;
     }
-
+    //快速排序
     public int[] quickSort(int[] list, int left, int right) {
         if (left < right) {
             // 分割数组，找到分割点
@@ -60,7 +60,7 @@ public class NK140 {
         return list;
     }
 
-    /**
+    /**快排
      * 分割数组，找到分割点
      */
     public int partition(int[] list, int left, int right) {
@@ -90,7 +90,7 @@ public class NK140 {
         arr[i] = arr[j];
         arr[j] = temp;
     }
-
+    //分治排序
     public int[] mergeSort(int list[], int left, int right, int[] temp) {
         if (left < right) {
             //
@@ -130,7 +130,7 @@ public class NK140 {
             list[tempLeft++] = temp[t++];
         }
     }
-
+    //选择排序
     private int[] SelectSort(int[] array) {
         //运行时间
         //13ms
@@ -172,8 +172,7 @@ public class NK140 {
         SelectSortDG(array, ++index);
         return array;
     }
-
-
+    //插入排序
 //    private int[] InsertSort(int array[]){
 //        if (array == null){
 //            return null;
@@ -274,6 +273,5 @@ public class NK140 {
             maxHeapfy(array,largest,heapSize);
         }
     }
-
 
 }
