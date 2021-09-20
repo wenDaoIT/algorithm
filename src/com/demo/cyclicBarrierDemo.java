@@ -10,8 +10,6 @@ public class cyclicBarrierDemo {
         });
 
 
-
-
         for (int i = 0; i <14; i++) {
 
             int finalI = i;
