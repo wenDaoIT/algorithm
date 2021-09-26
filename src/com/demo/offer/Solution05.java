@@ -1,5 +1,5 @@
 package com.demo.offer;
-
+//替换空格
 public class Solution05 {
     public String replaceSpace(String s){
         int lenth = s.length();

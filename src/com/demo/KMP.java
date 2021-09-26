@@ -7,8 +7,8 @@ package com.demo;
  */
 public class KMP {
     public static void main(String[] args) {
-        String str1 = "ABCDSABCDE";
-        String str2 = "ABCDE";
+        String str1 = "";
+        String str2 = "";
         int [] next = KmpTable(str2);
         int index = kmpSearch(str1,str2,next);
         System.out.println(index);
@@ -35,20 +35,25 @@ public class KMP {
      * @return
      */
     private static int kmpSearch(String haystack ,String needle,int[] next){
-        for (int i = 0,j=0; i <haystack.length(); i++) {
+        if(haystack==null | needle == null){
+            return 0;
+        }else {
+            for (int i = 0,j=0; i <haystack.length(); i++) {
 
-        while (j>0 && haystack.charAt(i) != needle.charAt(j) ){
-            //根据匹配表部分回溯
-            j = next[j-1];
+                while (j>0 && haystack.charAt(i) != needle.charAt(j) ){
+                    //根据匹配表部分回溯
+                    j = next[j-1];
+                }
+                if (haystack.charAt(i) == needle.charAt(j)){
+                    //
+                    j++;
+                }
+                if(j == needle.length()){
+                    return i-j+1;
+                }
+            }
+            return -1;
         }
-        if (haystack.charAt(i) == needle.charAt(j)){
-            //
-            j++;
-        }
-        if(j == needle.length()){
-            return i-j+1;
-        }
-        }
-        return -1;
+
     }
 }
