@@ -1,4 +1,4 @@
-package com.demo;
+package com.demo.Others;
 
 public class BST前中后 {
     public static void main(String[] args) {

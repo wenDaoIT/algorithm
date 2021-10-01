@@ -6,24 +6,23 @@ import java.util.Arrays;
 public class NK140 {
 
     public static void main(String[] args) {
-        int[] arr = {5, 2, 3, 1, 6};
+        int[] arr = {5, 2, 3, 1, 6,8};
         NK140 n1 = new NK140();
 //        for (int res : n1.MySort(arr)){
 //            System.out.println(res);
 //        }
-//        n1.quickSort(arr, 0,arr.length-1);
-//        for (int res:n1.quickSort(arr,0, arr.length-1)
-//             ) {
-//            System.out.println(res);
-//        }
+        for (int res:n1.quickSort(arr,0, arr.length-1)
+             ) {
+            System.out.println(res);
+        }
 //        int[] temp = new int[arr.length];
 //        for (int res : n1.mergeSort(arr,0, arr.length-1,temp)){
 //            System.out.println(res);
 //        }
-        for (int res : n1.heapSort(arr)) {
-            System.out.println(res);
-
-        }
+//        for (int res : n1.heapSort(arr)) {
+//            System.out.println(res);
+//
+//        }
 //        System.out.println(arr.length -2 >>1);
     }
 
@@ -74,10 +73,10 @@ public class NK140 {
             // 交换
             swap(list, left, right);
 
+
             while (left < right && list[left] <= first) {
                 left++;
             }
-
             // 交换
             swap(list, left, right);
         }
@@ -116,7 +115,6 @@ public class NK140 {
             } else {
                 temp[t++] = list[r++];
             }
-
         }
         while (i <= mid) {
             temp[t++] = list[i++];

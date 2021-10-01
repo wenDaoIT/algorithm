@@ -1,4 +1,4 @@
-package com.demo;
+package com.demo.Others;
 /*
 大前提：因为书包初始容量大于0，物品也不会是0件，所以i，j,从1开始
  */

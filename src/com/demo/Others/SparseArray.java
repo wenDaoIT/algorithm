@@ -1,4 +1,4 @@
-package com.demo;
+package com.demo.Others;
 
 import java.awt.*;
 import java.io.*;

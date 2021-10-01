@@ -1,4 +1,4 @@
-package com.demo;
+package com.demo.Others;
 
 public class BST<E extends Comparable<E>> {
         private class Node{

@@ -1,8 +1,6 @@
-package com.demo;
+package com.demo.Others;
 
-import com.demo.offer.FangFa1;
-
-public class Test implements FangFa1 {
+public class Test {
     public static void main(String[] args) {
         System.out.println("5555555555555");
     }
