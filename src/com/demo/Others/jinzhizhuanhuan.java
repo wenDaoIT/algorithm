@@ -14,7 +14,7 @@ public class jinzhizhuanhuan {
     public String solve (int M, int N) {
         // write code here
         if(M == 0) return "0";//如果M=0就直接返回
-        boolean flag = false;//记录是不是负数
+        boolean flag = false;// 记录是不是负数
         if(M < 0){
             //如果是负数flag=true，M 取相反数
             flag = true;

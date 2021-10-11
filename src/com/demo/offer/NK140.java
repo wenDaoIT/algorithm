@@ -11,7 +11,7 @@ public class NK140 {
 //        for (int res : n1.MySort(arr)){
 //            System.out.println(res);
 //        }
-        for (int res:n1.quickSort(arr,0, arr.length-1)
+        for (int res:n1.heapSort(arr)
              ) {
             System.out.println(res);
         }
@@ -89,7 +89,7 @@ public class NK140 {
         arr[i] = arr[j];
         arr[j] = temp;
     }
-    //分治排序
+    //分治归并排序
     public int[] mergeSort(int list[], int left, int right, int[] temp) {
         if (left < right) {
             //
